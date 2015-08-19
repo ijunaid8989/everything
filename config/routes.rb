@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'dashboard/index'
+
   get 'sessions/index'
 
   resources :sessions
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
 
   root "sessions#index"
 
+  get "dashboard" => "dashboard#index" , :as => "dashboard"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
