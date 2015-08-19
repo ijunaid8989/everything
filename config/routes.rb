@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   get 'sessions/index'
 
-  resources :verbps
+  resources :sessions
   
   get 'levels/index'
 
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'verbps/about'
 
-  root "verbps#index"
+  root "sessions#index"
 
 
 
