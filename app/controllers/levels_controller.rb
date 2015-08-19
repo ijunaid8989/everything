@@ -6,22 +6,27 @@ class LevelsController < ApplicationController
   end
 
   def create
-  	@levelval = params.require(:level).permit(:name)
+  	@test = params.require(:level).permit(:name)[:name]
+  	if @test.empty?
+  		redirect_to "/addlevel" , :notice => "Name cant be empty"
+  	else
+	  	@levelval = params.require(:level).permit(:name)
 
-  	@subjectval = params.require(:subject).permit(:name)[:name]
+	  	@subjectval = params.require(:subject).permit(:name)[:name]
 
-  	@level = Level.new(@levelval)
+	  	@level = Level.new(@levelval)
 
-  	@turnsubs = @subjectval.split(",")
+	  	@turnsubs = @subjectval.split(",")
 
-  	if @level.save
+	  	if @level.save
 
-  		@levelid = @level.id
+	  		@levelid = @level.id
 
-  		@turnsubs.each do |single|
-  			Subject.create!(name: single , level_id: @levelid)
-  		end
-  		redirect_to "/addlevel"
+	  		@turnsubs.each do |single|
+	  			Subject.create!(name: single , level_id: @levelid)
+	  		end
+	  		redirect_to "/addlevel"
+	  	end
   	end
   end
 

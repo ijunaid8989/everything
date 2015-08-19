@@ -6,7 +6,7 @@
 	<div class="form-group">
 		<%= fields_for @subjects do |s| %>
 			<%= s.label :subjectname , "Subjects :" %>
-			<%= s.text_area :name , :class => "form-control" , rows: 3 %>
+			<%= s.text_area :name , :class => "form-control" , rows: 3, :placeholder => "Add Subjects comma separated" %>
 		<% end %>
 	</div>
 	<%= f.submit :Create , :class => "btn btn-primary" %>

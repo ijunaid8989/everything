@@ -10,9 +10,11 @@
 <div class="wrapper">
 	<h1> :Student App </h1>
 </div>
-<% flash.each do |name , msg| %>
-	<%= content_tag :div , msg , class: "flash #{name}" %>
-<% end %>
+<div class="container">
+	<% if flash[:notice]%>
+		<div class="alert alert-info"><%= flash[:notice] %></div>
+	<% end %>
+</div>
 <section class="container">
 	<% if logged_in? %>
 		<ol class="breadcrumb">
