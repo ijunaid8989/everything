@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
+  
+  get 'sessions/index'
+
+  resources :verbps
+  
   get 'levels/index'
 
   get 'verbps/index'
 
   get 'verbps/about'
+
+  root "verbps#index"
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

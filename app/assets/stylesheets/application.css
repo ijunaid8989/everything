@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+*{
+	margin: 0 auto;
+}
+
+#staticFirst{
+	width: 700px;
+	height: auto;
+	overflow: hidden;
+}
