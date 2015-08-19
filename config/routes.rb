@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'sessions/index'
 
   resources :sessions
+  resources :levels
+  resources :subjects
   
   get 'levels/index'
 
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
 
   root "sessions#index"
 
+  get "addlevel" => "levels#index" , :as => "addlevel"
   get "dashboard" => "dashboard#index" , :as => "dashboard"
   get "signout" => "sessions#destroy" , :as => "signout"
 
