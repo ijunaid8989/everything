@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'levels/index'
+
   get 'verbps/index'
 
   get 'verbps/about'
