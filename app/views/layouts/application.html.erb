@@ -8,14 +8,22 @@
 </head>
 <body>
 <div class="wrapper">
-	StudentApp
+	<h1> :Student App </h1>
 </div>
 <% flash.each do |name , msg| %>
 	<%= content_tag :div , msg , class: "flash #{name}" %>
 <% end %>
-<%= yield %>
-<footer>
-	All rigts have been reserved
-</footer>
+<section class="container">
+	<% if logged_in? %>
+		<ol class="breadcrumb">
+		  <li><%= link_to "Dashboard", "/dashboard" %></li>
+		  <li><%= link_to "Add Level", "/addlevel" %> </li>
+		  <li><%= link_to "Signout" , "/signout" %></li>
+		</ol>
+	<% end %>
+</section>
+<div class="container">
+	<%= yield %>
+</div>
 </body>
 </html>

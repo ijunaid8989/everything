@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   root "sessions#index"
 
   get "dashboard" => "dashboard#index" , :as => "dashboard"
+  get "signout" => "sessions#destroy" , :as => "signout"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
