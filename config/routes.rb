@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'dopers/index'
+
   get 'users/index'
 
   get 'dashboard/index'
