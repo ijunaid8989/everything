@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'users/index'
+
   get 'dashboard/index'
 
   get 'sessions/index'
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
   resources :sessions
   resources :levels
   resources :subjects
+  resources :users
   
   get 'levels/index'
 
@@ -19,6 +22,7 @@ Rails.application.routes.draw do
   get "addlevel" => "levels#index" , :as => "addlevel"
   get "dashboard" => "dashboard#index" , :as => "dashboard"
   get "signout" => "sessions#destroy" , :as => "signout"
+  get "newuser" => "users#index" , :as => "newuser"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
