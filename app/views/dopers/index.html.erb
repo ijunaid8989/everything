@@ -1,2 +1,11 @@
-<h1>Dopers#index</h1>
-<p>Find me in app/views/dopers/index.html.erb</p>
+<%= form_for @doper , :html => {:id => "level_forms"}  do |f| %>
+	<div class="form-group">
+		<%= f.label :classname, "Class Name :" %>
+		<%= f.text_field :name , :class => "form-control" , :placeholder => "Class Name" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :levelid, "Level Name :"%>
+		<%= f.select :level_id, options_from_collection_for_select(@levels , 'id' , 'name') ,{ :include_blank => true }, {:class => "form-control" }%>
+	</div>
+	<%= f.submit :Create , :class => "btn btn-primary" %>
+<% end %>
